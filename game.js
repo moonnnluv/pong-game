@@ -12,8 +12,8 @@ let playerY = (canvas.height - PADDLE_HEIGHT) / 2;
 let aiY = (canvas.height - PADDLE_HEIGHT) / 2;
 let ballX = (canvas.width - BALL_SIZE) / 2;
 let ballY = (canvas.height - BALL_SIZE) / 2;
-let ballSpeedX = 5 * (Math.random() > 0.5 ? 1 : -1);
-let ballSpeedY = 3 * (Math.random() * 2 - 1);
+let ballSpeedX = 3 * (Math.random() > 0.5 ? 1 : -1);
+let ballSpeedY = 2 * (Math.random() * 2 - 1);
 
 let playerScore = 0, aiScore = 0;
 
@@ -54,9 +54,9 @@ function updateAI() {
     // IA simple: mueve el centro de la pala hacia la pelota
     let center = aiY + PADDLE_HEIGHT / 2;
     if (center < ballY + BALL_SIZE/2 - 8) {
-        aiY += 4;
+        aiY += 2.5;
     } else if (center > ballY + BALL_SIZE/2 + 8) {
-        aiY -= 4;
+        aiY -= 2.5;
     }
     // Limitar dentro del canvas
     aiY = Math.max(0, Math.min(canvas.height - PADDLE_HEIGHT, aiY));
@@ -81,7 +81,7 @@ function updateBall() {
         ballSpeedX = -ballSpeedX;
         // Efecto de rebote según punto de impacto
         let hitPos = (ballY + BALL_SIZE/2) - (playerY + PADDLE_HEIGHT/2);
-        ballSpeedY = hitPos * 0.25;
+        ballSpeedY = hitPos * 0.15;
         ballX = PLAYER_X + PADDLE_WIDTH; // Evita quedarse pegado
     }
 
@@ -113,8 +113,8 @@ function resetBall(dir) {
     ballX = (canvas.width - BALL_SIZE) / 2;
     ballY = (canvas.height - BALL_SIZE) / 2;
     // Lanza la bola hacia el último ganador
-    ballSpeedX = 5 * dir;
-    ballSpeedY = 3 * (Math.random() * 2 - 1);
+    ballSpeedX = 3 * dir;
+    ballSpeedY = 2 * (Math.random() * 2 - 1);
 }
 
 // Dibuja los objetos del juego
