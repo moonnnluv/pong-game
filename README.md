@@ -28,8 +28,13 @@ Este es un juego clásico de **Pong** desarrollado con HTML, CSS y JavaScript. E
 
 ## 📂 Estructura del proyecto
 
-<pre lang="markdown"> ``` pong-game/ ├── index.html # Página principal del juego ├── style.css # Estilos visuales ├── script.js # Lógica del juego en JavaScript └── README.md # Documentación del proyecto ``` </pre>
-
+```
+pong-game/
+├── index.html      # Página principal del juego
+├── style.css       # Estilos visuales
+├── script.js       # Lógica del juego en JavaScript
+└── README.md       # Documentación del proyecto
+```
 ---
 
 ## 📜 Licencia
