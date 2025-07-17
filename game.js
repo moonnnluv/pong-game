@@ -1,5 +1,8 @@
 const canvas = document.getElementById("pong");
 const ctx = canvas.getContext("2d");
+canvas.style.display = "none";
+
+let isGameRunning = false;
 
 // Constantes del juego
 const PADDLE_WIDTH = 12, PADDLE_HEIGHT = 80;
@@ -141,10 +144,37 @@ function draw() {
 
 // Bucle principal
 function gameLoop() {
+    if (!isGameRunning) return;
+
     updateAI();
     updateBall();
     draw();
     requestAnimationFrame(gameLoop);
 }
+
+const startBtn = document.getElementById("startBtn");
+const countdownDiv = document.getElementById("countdown");
+
+startBtn.addEventListener("click", () => {
+    startBtn.style.display = "none"; // Oculta el botón
+    countdown(3); // Comienza la cuenta regresiva desde 3
+});
+
+function countdown(seconds) {
+    countdownDiv.innerText = seconds;
+    const interval = setInterval(() => {
+        seconds--;
+        if (seconds > 0) {
+            countdownDiv.innerText = seconds;
+        } else {
+            clearInterval(interval);
+            countdownDiv.innerText = "";
+            canvas.style.display = "block"; // Muestra el juego
+            isGameRunning = true;
+            gameLoop();
+        }
+    }, 1000);
+}
+
 
 gameLoop();
