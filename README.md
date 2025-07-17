@@ -1,6 +1,6 @@
 # 🕹️ Pong Game - JavaScript Edition
 
-Este es un juego clásico de **Pong** desarrollado con HTML, CSS y JavaScript. El jugador controla la pala izquierda con el **mouse**, mientras que la derecha es manejada automáticamente por una **IA básica**. Ideal como proyecto introductorio a la programación gráfica y lógica de juegos.
+Este es un juego clásico de **Pong** desarrollado con HTML, CSS y JavaScript. El jugador controla la pala izquierda con el **mouse**, mientras que la derecha es manejada automáticamente por una **IA básica**. 
 
 ---
 
@@ -46,6 +46,6 @@ Puedes usarlo, modificarlo y compartirlo libremente con fines educativos.
 
 ## ✨ Autora
 
-Proyecto desarrollado por Alejandra Reyes Duque [@moonnnluv](https://github.com/moonnnluv)  
+Proyecto desarrollado por Alejandra Reyes [@moonnnluv](https://github.com/moonnnluv)  
 💻 Estudiante de Ingeniería en Informática  
 🎓 Especialización en Desarrollo de Software
